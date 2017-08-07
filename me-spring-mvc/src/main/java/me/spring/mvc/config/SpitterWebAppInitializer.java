@@ -9,7 +9,7 @@ public class SpitterWebAppInitializer extends AbstractAnnotationConfigDispatcher
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[0];
+        return new Class[]{RootConfig.class};
     }
 
     //指定配置类
@@ -18,6 +18,7 @@ public class SpitterWebAppInitializer extends AbstractAnnotationConfigDispatcher
         return new Class[]{WebConfig.class};
     }
 
+    //将dispatcherServlet 映射到"/"
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};
