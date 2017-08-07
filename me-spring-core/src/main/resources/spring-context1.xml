@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <bean id="compactDisc" class="me.spring.di.CompactDiscImpl"/>
+    <!--声明一个CDPlayer 构造器中引用compactDisc-->
+    <!--2种方式-->
+        <!--<bean id="cdPlayer" class="me.spring.di.CDPlayer">
+            <constructor-arg ref="compactDisc"/>
+        </bean>-->
+    <!--注意 c:compactDisc-ref  compactDisc 一定要和构造函数中参数名字对应 -->
+        <bean id="cdPlayer" class="me.spring.di.CDPlayer" c:compactDisc-ref="compactDisc"/>
+
+
+
+</beans>

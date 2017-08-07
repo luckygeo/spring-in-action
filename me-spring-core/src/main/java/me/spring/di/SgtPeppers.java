@@ -6,7 +6,7 @@ import other.CompactDisc;
 /**
  * Created on 2017/8/5
  */
-@Component
+/*@Component*/
 public class SgtPeppers implements CompactDisc {
 
     private final String title = "Sgt. Pepper Lonely Hearts Clubs Band";
