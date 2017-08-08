@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: tgs
+  Date: 2017/8/8
+  Time: 13:22
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/common/tag.jsp"%>
 <!doctype html>
@@ -10,18 +17,6 @@
     <title>Document</title>
 </head>
 <body>
-<ul>
-    <c:forEach items="${spittles}" var="item">
-        <li>${item.message}</li>
-    </c:forEach>
-</ul>
-<span id="jq">我爱你</span>
+<sf:form action="" method="get" ></sf:form>
 </body>
-<%--<script type="text/javascript" src="/js/jquery-1.11.3.min.js"/> --%>
-<script type="text/javascript" src="<c:url value="/js/jquery-1.11.3.min.js" />"/>
-
-
-<script>
-    console.log($("#jq").text());
-</script>
 </html>
