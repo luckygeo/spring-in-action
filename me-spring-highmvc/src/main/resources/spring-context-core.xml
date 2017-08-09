@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <!--包的扫描，spring 排除@Controller注解-->
+    <context:component-scan base-package="me.spring" >
+        <context:exclude-filter  type="annotation" expression="org.springframework.stereotype.Controller" />
+    </context:component-scan>
+    <!--<context:component-scan use-default-filters="true" />-->
+    <!--是否自动检测@Component, @Repository, @Service,
+	or @Controller should be enabled 可用 默认为true-->
+
+    <!--setExposeContextBeansAsAttributes(true)使得可以在JSP页面中通过${}访问容器中的bean。-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView"/>
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="exposeContextBeansAsAttributes" value="true"/>
+    </bean>
+
+
+
+</beans>
