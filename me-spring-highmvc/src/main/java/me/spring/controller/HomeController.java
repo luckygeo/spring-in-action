@@ -63,7 +63,6 @@ public class HomeController {
     @RequestMapping(value = "spform")
     public ModelAndView spform() {
         logger.debug("id: {}", "");
-
         return new ModelAndView("spform");
     }
 }

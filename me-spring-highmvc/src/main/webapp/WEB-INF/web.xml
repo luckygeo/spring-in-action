@@ -12,6 +12,26 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+    
+    
+    <!--注册spring 编码器-->
+    <filter>
+        <filter-name>spring-encoding</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>spring-encoding</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
 
     <!--注册DispatcherServlet-->
     <servlet>
@@ -32,5 +52,10 @@
         <servlet-name>dispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <error-page>
+        <location>/error</location>
+    </error-page>
+
 
 </web-app>
