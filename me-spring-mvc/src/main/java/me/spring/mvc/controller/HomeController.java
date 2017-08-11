@@ -1,12 +1,15 @@
 package me.spring.mvc.controller;
 
+import me.spring.mvc.interfaces.SpitterRepsitory;
 import me.spring.mvc.interfaces.Spittle;
 import me.spring.mvc.interfaces.SpittleRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.BindingResult;
@@ -39,6 +42,10 @@ public class HomeController {
 
     @Autowired
     private SpittleRepository spittleRepository;
+
+    @Autowired
+    @Qualifier("spitterRepsitory")
+    private SpitterRepsitory repsitory;
 
     @RequestMapping(value = "index")
     public ModelAndView index() {
@@ -89,6 +96,12 @@ public class HomeController {
         logger.debug("id: {}", "");
 
         return new ModelAndView("spform");
+    }
+
+    @RequestMapping("add")
+    public ModelAndView add(){
+        repsitory.addSpitter(null);
+        return new ModelAndView("index");
     }
 
 }
