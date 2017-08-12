@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>me.code.generator</artifactId>
+    <artifactId>me-code-generator</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.mybatis.generator</groupId>
